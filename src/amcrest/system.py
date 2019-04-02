@@ -68,10 +68,10 @@ class System(object):
         )
         swinfo = ret.content.decode('utf-8')
         if ',' in swinfo:
-            version, build_date = swinfo.split(',')
+            version, build_date, webversion = swinfo.split(',')
         else:
-            version, build_date = swinfo.split()
-        return (version, build_date)
+            version, build_date, webversion = swinfo.split()
+        return (version, build_date, webversion)
 
     @property
     def hardware_version(self):
